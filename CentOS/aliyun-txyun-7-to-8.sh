@@ -1,11 +1,9 @@
 #!/bin/sh
 yum -y upgrade
 yum -y install epel-release
-yum -y install yum-utils rpmconf
+yum -y install rpmconf
 yes | rpmconf -a
 yum -y remove python36-rpmconf rpmconf
-package-cleanup --leaves
-package-cleanup --orphans
 yum -y install dnf
 dnf -y upgrade
 dnf -y install http://mirrors.163.com/centos/8/BaseOS/x86_64/os/Packages/centos-repos-8.2-2.2004.0.1.el8.x86_64.rpm http://mirrors.163.com/centos/8/BaseOS/x86_64/os/Packages/centos-release-8.2-2.2004.0.1.el8.x86_64.rpm http://mirrors.163.com/centos/8/BaseOS/x86_64/os/Packages/centos-gpg-keys-8.2-2.2004.0.1.el8.noarch.rpm
